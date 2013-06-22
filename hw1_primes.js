@@ -1,5 +1,4 @@
 function is_prime(number) {
-  if (number < 2) return false;
   if (number == 2) return true;
 
   sq = Math.ceil(Math.sqrt(number));
@@ -9,16 +8,14 @@ function is_prime(number) {
   return true;
 }
 
-var prime = 2;
-var prime_counter = 0;
+var number = 2;
 
-while (true) {
-  if (is_prime(prime)) {
-    prime_counter++;
-    if (prime_counter == 10001) {
-      console.log("10001st prime: " + prime);
-      break;
-    }
+Array Primes = new Array();
+
+while (Primes.length < 100) {
+  if (is_prime(number)) {
+     Primes.push(number);
+     console.log(number);
   }
-  prime++;
+  number++;
 }
