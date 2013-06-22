@@ -10,12 +10,17 @@ function is_prime(number) {
 
 var number = 2;
 
-Array Primes = new Array();
+var primes = new Array();
 
-while (Primes.length < 100) {
+while (primes.length < 100) {
   if (is_prime(number)) {
-     Primes.push(number);
-     console.log(number);
+     primes.push(number);
   }
   number++;
 }
+
+var fs = require('fs');
+var outfile = "primes.txt";
+
+
+fs.writeFileSync(outfile, primes);
